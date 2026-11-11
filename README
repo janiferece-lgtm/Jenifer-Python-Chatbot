@@ -1,0 +1,10 @@
+techno-rag-bot/
+├── data/
+│   └── sample_catalog.txt
+├── app.py
+├── ingest.py
+├── whatsapp.py
+├── requirements.txt
+├── Dockerfile
+├── .env.example
+└── README.md

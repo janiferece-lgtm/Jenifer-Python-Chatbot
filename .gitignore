@@ -1,0 +1,9 @@
+.env
+Set_up.py
+whatsapp.py
+changed codes details
+Dockerfile
+.venv
+.idea
+__pycache__/
+*.pyc
