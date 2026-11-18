@@ -1,10 +1,173 @@
-techno-rag-bot/
-├── data/
-│   └── sample_catalog.txt
+# Techno Products – AI-Powered Sales & Service Chatbot
+
+## 1. Project Overview
+
+Techno Products Sales & Service Bot is an AI-powered multilingual chatbot developed using Python, Streamlit, LangChain, Hugging Face, Qdrant and Groq.
+
+The main objective of this project is to help customers quickly find industrial product information and receive basic service-related assistance through natural language questions in Tamil or English.
+
+Instead of manually searching through a large product catalogue, customers can ask questions such as:
+
+- What is the price of an M30 bolt?
+- What is the stock availability of a 2HP motor?
+- மோட்டார் சத்தம் வருவதற்கு என்ன காரணம்?
+
+The chatbot retrieves relevant information from the industrial product catalogue and uses an LLM to generate a contextual response.
+
+## 2. Project Objectives
+
+- Build a multilingual AI chatbot for industrial products.
+- Retrieve relevant information from product catalogues.
+- Provide product prices and stock information.
+- Answer basic customer service-related questions.
+- Reduce manual searching and improve customer support.
+
+## 3. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| Streamlit | Chatbot user interface |
+| LangChain | Document processing and retrieval integration |
+| Hugging Face | Multilingual embedding model |
+| MiniLM | Converts text into vector embeddings |
+| Qdrant | Vector database for storing and searching embeddings |
+| Groq | LLM inference and answer generation |
+| Python-dotenv | Loads environment variables securely |
+
+## 4. Project Architecture
+
+The project follows a Retrieval-Augmented Generation (RAG) architecture.
+
+### Data Ingestion – ingest.py
+
+1. Loads the industrial product catalogue.
+2. Splits the document into smaller chunks using RecursiveCharacterTextSplitter.
+3. Converts the text chunks into vector embeddings using Hugging Face.
+4. Stores the embeddings in the Qdrant vector database.
+
+### Question Answering – app.py
+
+1. Accepts customer questions through Streamlit.
+2. Converts the question into an embedding using the same embedding model.
+3. Searches Qdrant for the five most relevant document chunks.
+4. Passes the retrieved context and customer question to the Groq LLM.
+5. Generates a contextual answer.
+6. Displays the answer and retrieved source documents.
+
+## 5. Project Folder Structure
+
+```text
+Jenifer-Python-Chatbot/
+│
+├── Data/
+│   └── Sample_Catalog
+│
 ├── app.py
 ├── ingest.py
-├── whatsapp.py
 ├── requirements.txt
-├── Dockerfile
-├── .env.example
+├── .gitignore
 └── README.md
+```
+
+## 6. Environment Configuration
+
+Create a `.env` file in the project root directory.
+
+Add the following environment variables:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+QDRANT_URL=your_qdrant_url
+QDRANT_API_KEY=your_qdrant_api_key
+```
+
+Never upload your actual `.env` file or API credentials to GitHub.
+
+## 7. Installation and Execution
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/janiferece-lgtm/Jenifer-Python-Chatbot.git
+```
+
+### Step 2: Navigate to the project folder
+
+```bash
+cd Jenifer-Python-Chatbot
+```
+
+### Step 3: Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+### Step 4: Activate the environment (Windows)
+
+```bash
+.venv\Scripts\activate
+```
+
+### Step 5: Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 6: Configure environment variables
+
+Create the `.env` file with valid Groq and Qdrant credentials.
+
+### Step 7: Ingest the catalogue
+
+```bash
+python ingest.py
+```
+
+Run ingestion when you need to build or refresh the Qdrant collection. Note that the current script deletes and recreates the collection.
+
+### Step 8: Launch the chatbot
+
+```bash
+streamlit run app.py
+```
+
+## 8. Key Features
+
+- Tamil and English question support.
+- Semantic search using vector embeddings.
+- Product price and stock information retrieval.
+- Industrial product catalogue integration.
+- LLM-based contextual responses.
+- Retrieved source document display.
+- Environment-variable-based API credential management.
+
+## 9. Future Enhancements
+
+- WhatsApp chatbot integration.
+- Docker-based deployment.
+- Improved conversation history.
+- PDF catalogue support.
+- Advanced product filtering.
+- More robust source citations and answer validation.
+
+## 10. Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Building a Retrieval-Augmented Generation application.
+- Document loading and text chunking.
+- Generating multilingual embeddings.
+- Vector database integration.
+- LLM API integration.
+- Building an interactive application using Streamlit.
+- Managing API credentials using environment variables.
+- Managing project dependencies and version control using Git and GitHub.
+
+## 11. Author
+
+**Developed by:** Jenifer
+
+**Project:** Techno Products – AI-Powered Sales & Service Chatbot
