@@ -1,8 +1,4 @@
 .env
-../../gitignore_deleted_files_of_chatbot_techno/Set_up.py
-../../gitignore_deleted_files_of_chatbot_techno/whatsapp.py
-../../gitignore_deleted_files_of_chatbot_techno/changed codes details
-../../gitignore_deleted_files_of_chatbot_techno/Dockerfile
 .venv
 .idea
 __pycache__/
