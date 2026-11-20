@@ -1,6 +1,6 @@
-# Techno Products – AI-Powered Sales & Service Chatbot
+Techno Products – AI-Powered Sales & Service Chatbot
 
-## 1. Project Overview
+1. Project Overview
 
 Techno Products Sales & Service Bot is an AI-powered multilingual chatbot developed using Python, Streamlit, LangChain, Hugging Face, Qdrant and Groq.
 
@@ -14,7 +14,7 @@ Instead of manually searching through a large product catalogue, customers can a
 
 The chatbot retrieves relevant information from the industrial product catalogue and uses an LLM to generate a contextual response.
 
-## 2. Project Objectives
+2. Project Objectives
 
 - Build a multilingual AI chatbot for industrial products.
 - Retrieve relevant information from product catalogues.
@@ -22,10 +22,10 @@ The chatbot retrieves relevant information from the industrial product catalogue
 - Answer basic customer service-related questions.
 - Reduce manual searching and improve customer support.
 
-## 3. Technologies Used
+3. Technologies Used
 
 | Technology | Purpose |
-|---|---|
+
 | Python | Core programming language |
 | Streamlit | Chatbot user interface |
 | LangChain | Document processing and retrieval integration |
@@ -35,18 +35,18 @@ The chatbot retrieves relevant information from the industrial product catalogue
 | Groq | LLM inference and answer generation |
 | Python-dotenv | Loads environment variables securely |
 
-## 4. Project Architecture
+4. Project Architecture
 
 The project follows a Retrieval-Augmented Generation (RAG) architecture.
 
-### Data Ingestion – ingest.py
+* Data Ingestion – ingest.py
 
 1. Loads the industrial product catalogue.
 2. Splits the document into smaller chunks using RecursiveCharacterTextSplitter.
 3. Converts the text chunks into vector embeddings using Hugging Face.
 4. Stores the embeddings in the Qdrant vector database.
 
-### Question Answering – app.py
+ * Question Answering – app.py
 
 1. Accepts customer questions through Streamlit.
 2. Converts the question into an embedding using the same embedding model.
@@ -55,9 +55,9 @@ The project follows a Retrieval-Augmented Generation (RAG) architecture.
 5. Generates a contextual answer.
 6. Displays the answer and retrieved source documents.
 
-## 5. Project Folder Structure
+5. Project Folder Structure
 
-```text
+
 Jenifer-Python-Chatbot/
 │
 ├── Data/
@@ -69,8 +69,7 @@ Jenifer-Python-Chatbot/
 ├── .gitignore
 └── README.md
 ```
-
-## 6. Environment Configuration
+6. Environment Configuration
 
 Create a `.env` file in the project root directory.
 
@@ -84,43 +83,43 @@ QDRANT_API_KEY=your_qdrant_api_key
 
 Never upload your actual `.env` file or API credentials to GitHub.
 
-## 7. Installation and Execution
+7. Installation and Execution
 
-### Step 1: Clone the repository
+Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/janiferece-lgtm/Jenifer-Python-Chatbot.git
 ```
 
-### Step 2: Navigate to the project folder
+Step 2: Navigate to the project folder
 
 ```bash
 cd Jenifer-Python-Chatbot
 ```
 
-### Step 3: Create a virtual environment
+Step 3: Create a virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-### Step 4: Activate the environment (Windows)
+Step 4: Activate the environment (Windows)
 
 ```bash
 .venv\Scripts\activate
 ```
 
-### Step 5: Install dependencies
+Step 5: Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 6: Configure environment variables
+Step 6: Configure environment variables
 
 Create the `.env` file with valid Groq and Qdrant credentials.
 
-### Step 7: Ingest the catalogue
+Step 7: Ingest the catalogue
 
 ```bash
 python ingest.py
@@ -128,13 +127,13 @@ python ingest.py
 
 Run ingestion when you need to build or refresh the Qdrant collection. Note that the current script deletes and recreates the collection.
 
-### Step 8: Launch the chatbot
+Step 8: Launch the chatbot
 
 ```bash
 streamlit run app.py
 ```
 
-## 8. Key Features
+8. Key Features
 
 - Tamil and English question support.
 - Semantic search using vector embeddings.
@@ -144,7 +143,7 @@ streamlit run app.py
 - Retrieved source document display.
 - Environment-variable-based API credential management.
 
-## 9. Future Enhancements
+9. Future Enhancements
 
 - WhatsApp chatbot integration.
 - Docker-based deployment.
@@ -153,7 +152,7 @@ streamlit run app.py
 - Advanced product filtering.
 - More robust source citations and answer validation.
 
-## 10. Learning Outcomes
+10. Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -166,7 +165,7 @@ Through this project, I gained practical experience in:
 - Managing API credentials using environment variables.
 - Managing project dependencies and version control using Git and GitHub.
 
-## 11. Author
+11. Author
 
 **Developed by:** Jenifer
 
